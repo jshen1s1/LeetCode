@@ -1,0 +1,59 @@
+187,Repeated DNA Sequences,M,Mapping,Store visited substrings with set to avoid duplicate.
+188,"Best Time to Buy and Sell Stock IV",H,DP,Buy and sell stock to make maximum profit in k transactions. O(kn). DP storing max profit made in each transaction + previous profits.
+189,Rotate Array,M,Array,"Reverse by part, then the whole array. Replace in-place. O(1) space."
+190,Reverse Bits,E,Bits,"Int to bin str, reverse, str to int."
+191,Number of 1 Bits,E,Bits,&(AND) with 1 to check the last bit is 1 or not. Then shift right with >>. (n & (n-1) == 0) when is a power of 2.
+198,House Robber,M,DP,Max money may rob from house not adjacent. DP max between [i-2]+[i] and [i-1].
+199,Binary Tree Right Side View,M,Graph,Right most nodes. Store every last node at the begining of every bfs loop.
+200,"Number of Islands",M,Graph,"Count number of islanded 1's in a given grid map. Using dfs mark all found island, replace ""1"" with ""#"" marks ."
+201,Bitwise AND of Numbers Range,M,Bits,"The operation keeps all 1s which in every number. Keeping the common bits of m and n from left to right until the first different bit, setting all rest as 0. Shift right until equal to find all common bits from left to right. "
+202,Happy Number,E,Bits,Repeat the process until visited number. Set avoid visited int. 
+203,"Remove Linked List Elements",E,LinkedList,Remove nodes with val from a linked list using dummy head. Skip found nodes until node.val != val then move on. 
+204,Count Primes,M,Math,Find all primes under number n. Only need to test from 2 to sqrt(n)+1. Mark all multiples of found primes as non-prime.
+205,Isomorphic Strings,E,Mapping,Find if the pattern of two strs are the same using two dicts or through find function for each index.
+206,Reverse Linked List,E,LinkedList,Reverse linked list. 1). prev = None 2). t = cur.next 3). cur.next = prev 4). prev = cur 5). cur = t 6). return prev
+207,Course Schedule,M,Graph,"Cycle detection using DFS. Mark unchecked as 0, checking as 1, completed as 2. Cycle if node with 1 is visited again."
+208,Implement Trie (Prefix Tree),M,Graph,"Using linked list with each node as a dict. Insert: add each char as a child of previous char Search: follow the char path check whether the end is flaged as word CheckPrefix: similar as search, break when char can not follow the path "
+209,Minimum Size Subarray Sum,M,Array,"Looking for min length subarray that sum up to target num. Sliding window to search in O(n). Add to total while right < length(nums), minus from total while total >= target."
+210,Course Schedule II,M,Graph,Refer to #207. Append to result after a node is completed (no more unvisited children node).
+211,Design Add and Search Words Data Structure,M,Graph,Refer to #208. Doing a DFS with index+1 when the word contains '.' .
+212,Word Search II,H,Graph,Using DFS with backtracking to find all words in a grid. Words are stored in a Trie structure where each node in the trie represents a letter in a word and the '#' symbol indicates the end of a word. 
+213,House Robber II,M,DP,"Refer to # 198. Since house is recursive, we can only take either the first house or the last house. Do two dp searches for these two situations and take maximum."
+214,Shortest Palindrome,H,String,"Find the shortest palindrome by adding to the front of a string. Count from the back of origin string s, if s[:-i] == reversed_s[i:], add the reversed counted part in front of s."
+215,Kth Largest Element in an Array,M,Heap,Heap as a tree structure returns smallest num everytime. Heappushpop len(n)-k times to get kth largest element. Or using quickselect sort recursively.
+216,Combination Sum III,M,Math,"Using DFS where start value add 1 everytime, current path add range(start, len) everytime."
+217,Contains Duplicate,E,Array,Use set to remove duplicate then check len or use dict to check if appeared.
+218,The Skyline Problem,H,Heap,Use a max heap with negative height to record tallest building. Remove a building if current x pos passed its end pos. Add a new building to heap if it appears for the first time. Update result if current heap[0] is different from the prev result.   
+219,Contains Duplicate II,E,Array,Use dictory to store previous index.
+220,Contains Duplicate III,H ,Array,Using bucket sort to store num with key = num / (valueDiff + 1). Maintaining number of buckets under indexDiff. Check if num appears in current or adjcent buckets. 
+221,Maximal Square,M,DP,"Maximum size of a square depends on the minimum number of cell surrounding the current cell. If ""1"" found, do a min check among three cells then + 1 as current cell."
+222,Count Complete Tree Nodes,M,Graph,"To count the number of node, compute the height of left nodes and right nodes. Number of node in each height = 2 ** height."
+223,Rectangle Area,M,Math,"Compute the overlapping area using min(bx2, ax2) - max(ax1, bx1). Only when both x and y overlapped, two rectangle are overlapped."
+224,Basic Calculator,H,Math,"Each + or - changes the sign and ')' updates the total number, '(' updates the stack. Num used to record long number, Stack used to record value in a parenthesis."
+225,Implement Stack using Queues,E,Array,"To build stack with queue, everytime a new input is added, append the old queue to the end of the new input queue."
+226,Invert Binary Tree,E,Graph,"Invert the tree in BFS order. If node is not None, switch left and right."
+227,Basic Calculator II,M ,Math,"Initiate previous operator as '+', operate based on previous operator. Store all calculated numbers in a stack. "
+228,Summary Ranges,E,Array,Update range starter when a break is encountered. Update res with range + previous to breaker. 
+229,Majority Element II,M ,Array,"Refer to Boyer-Moore Majority Vote algorithm. Since we want numbers appear more than len//3 times, at most two numbers can be selected. O(1) space."
+230,Kth Smallest Element in a BST,M,Graph,"Doing an inorder traversal with stack to find the smallest left most node, then count the number of node on right subtree until we find the kth smallest value."
+231,Power of Two,E,Bits,Avoid n == 0 then check using (n&(n-1) == 0).
+232,Implement Queue using Stacks,E,Array,Runing to stacks. Input value goes into Push list. Pop function runs Peek first then pop from Pop list. Peek function moves items from Push list to Pop list using pop(). len == total len.
+233,Number of Digit One,H,Math,Calculate occurance of 1 on every digit. Count number of 1s using prefix and postfix of the current digit.
+234,Palindrome Linked List,E,LinkedList,Find the middle node using a twice faster pointer. Reverse the second half of the list using prev node. Compare from both head.
+235,Lowest Common Ancestor of a Binary Search Tree,M,Graph,"Recursive approach. In a binary search tree, all left subtree is smaller, all right subtree is larger. If both nodes is on one side, recurse with that side as root. If two nodes takes two sides ot equal to current root, return current root."
+236,Lowest Common Ancestor of a Binary Tree,M,Graph,Recursive approach. Recursively check if root == p or q. Move on to left and right subtree. Return non-empty result or root if both non-empty. 
+237,Delete Node in a Linked List,M,LinkedList,"Instead of getting info of previous node, replace current node val with val of next node then skip the next node."
+238,Product of Array Except Self,M,Array,"Perform a both side run with a res list recording the production of all left nums. When doing the backward, keep track of a running production of right nums. Product left value to right running value."
+239,Sliding Window Maximum,H,Array,Monotonic Deque structure where elements are sorted in decreasing order. It is achieved by continously pop out last element that is smaller to the new element. A queue only keeping the largest number and its lower numbers.
+240,Search a 2D Matrix II,M,Array,"Start searching from right top corner since all elements left to it is smaller, under it is larger. Then apply binary search. c - 1 if larger than target, r + 1 if smaller than target."
+241,Different Ways to Add Parentheses,M,Math,"Use divide & conquer approach. When operator is encountered, recursively calculate results from both sides. Pass expressions to next recurse, return if is digit.   "
+242,Valid Anagram,E,String,Build two dictories. Store frequency and key in dictories. Compare two dictories.
+257,Binary Tree Paths,E,Graph,DFS recursively/ DFS + stack/ DFS + queue 
+258,Add Digits,E,Math,"So for any number that isn't 0 and isn't divisible by 9, the root will always n % 9 for a given number n. Numbers divisible by 9 always have a digital root of 9"
+260,Single Number III,M,Bits,XOR return 0 if same numbers. x & -x returns rightmost non-zero position. 
+263,Ugly Number,E,Math,"Divide by 2,3,5 while dividable. Check whether arrive 1 as result. "
+264,Ugly Number II,M,DP,"Using DP with three pointers. Everytime find the smallest ugly number which is multiplied by 2,3,5. Update the three indexes and then add the smallest of the three candidate ugly numbers. "
+268,Missing Number,E,Math/Bits,"Find the missing number by minus the sum of the list from total sum of range(n+1). Or, using xor to cancel same numbers, leaving the odd number."
+273,Integer to English Words,H,Recursion,"Using sub problems to solve the final problem, focus on edge cases. If there are no digit behind 0, leave no more marks, e.g. 20, 20000 (if n%1000)."
+274,H-Index,M,Array,"Sort with counting sort. Create buckets for numbers of paper cited with the same number of times. Reversely sum the number of paper cited until >= range(n, -1, -1). "
+275,H-Index II,M,Array,Using binary serach to find i where citations[i] >= len(citations) - i. Result is len(citations) - i. 
