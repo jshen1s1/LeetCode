@@ -1,3 +1,4 @@
+#,Title,Difficulty,Type,Comments
 187,Repeated DNA Sequences,M,Mapping,Store visited substrings with set to avoid duplicate.
 188,"Best Time to Buy and Sell Stock IV",H,DP,Buy and sell stock to make maximum profit in k transactions. O(kn). DP storing max profit made in each transaction + previous profits.
 189,Rotate Array,M,Array,"Reverse by part, then the whole array. Replace in-place. O(1) space."
