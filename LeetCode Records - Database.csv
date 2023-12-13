@@ -1,0 +1,24 @@
+#,Title,Difficulty,Type,Comments,Language
+177,Nth Highest Salary,M,Select,Select nth salary value using a combination of LIMIT and OFFSET (which only accept constant).,MySQL
+178,Rank Scores,M,Sort,"Ranking scores without holes. Window function dense_rank() with over() clause returns the rank of the current row within its partition, without gaps.",MySQL
+180,Consecutive Numbers,M,Select,"Only select distinct consecutive number where num is the same but id = id +1, id + 2. (Using lead() window function to select the following id with offset e.g. lead(num, 1) over(), lead(num, 2) over().)",MySQL
+181,Employees Earning More Than Their Managers,E,Join,Inner join on manager ID where salary is higher.,MySQL
+182,Duplicate Emails,E,Group,Group the same category then count the number in that category.,MySQL
+183,Customers Who Never Order,E,Join,Left join two tables so we can find customers with no id in orders table.,MySQL
+184,Department Highest Salary,M,Join,"Join two tables on departmentId, group by Employee table on departmentId, and where statement select max salary among grouped table. ",MySQL
+185,Department Top Three Salaries,H,Join,Refer to #184. Using where statement to limit salary range where the number of distinct salary that is higher then the main query salary is less than 3. ,MySQL
+262,Trips and Users,H,Calculation,Calculate the ratio of cancelled order to total order but avoiding banned users. Using with clause to create a temporary result set that can be referred within later statements.,MySQL
+511,Game Play Analysis I,E,Group,Min function can return earliest date value.,MySQL
+550,Game Play Analysis IV,M,Calculation,"Count the number of players who logged in on consecutive days and the total number of players. Use date_sub() to find if there is a login on the day after player's first login. e.g. Where (a, b) in (select (c,d))",MySQL
+570,Managers with at Least 5 Direct Reports,M,Join,"Join on id with managerId. Group by id before count, otherwise it will count all rows.",MySQL
+577,Employee Bonus,E,Join,Left join then query with two filters. Comparsion methods does not take Null values into account.,Pandas
+584,Find Customer Referee,E,Select,Use two filters. Condsider Null value.,Pandas
+585, Investments in 2016,M,Duplicate,Build two sets. One droped all duplicated loc value. One with all duplicated 2015 value. Find instance in both sets.,Pandas
+586,Customer Placing the Largest Number of Orders,E,Calculation,Use mode function to find most appeared value in specific col. ,Pandas
+595,Big Countries,E,Select,Use two filter for each condition.,Pandas
+596,Classes More Than 5 Student,E,Group,Group to count size then select instances with condition.,Pandas
+607,Sales Person,E,Join,"Merge order with company table. Select unique sales man id that takes X company's order, then select from the main table who is not in that set.",Pandas
+610,Triangle Judgement,E,Lambda,Use lambda function to test if three values form a triangle.,Pandas
+619,Biggest Single Numbe,E,Duplicate,Find the max value in datafreame without duplicates.,Pandas
+620,Not Boring Movie,E,Select,Filtering and sort by values.,Pandas
+627,Swap Salar,E,Lambda,Use replace function to swap 'f' and 'm' or use a lambda function for each row.  ,Pandas
